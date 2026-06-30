@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projects page showcasing web development work and accessible applications.">
+    <meta name="description" content="Projects page showcasing To-Do App and a real-time Weather Dashboard using REST APIs.">
     <title>Projects - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Semantic Header Section -->
     <header>
         <h1>My Projects</h1>
         <nav>
@@ -20,28 +20,47 @@
         </nav>
     </header>
 
-    <!-- Main Content Section -->
     <main>
-        <section id="work">
-            <h2>Featured Work</h2>
-            
-            <!-- Individual Project Article -->
-            <article>
-                <h3>Project 1: Accessible Portfolio</h3>
-                <p>A fully semantic HTML5 website built with perfect Lighthouse audit score target.</p>
-            </article>
+        <!-- Task 3: To-Do App Section -->
+        <section id="todo-app" style="margin-bottom: 3rem;">
+            <h2>Interactive To-Do List App</h2>
+            <div style="margin-bottom: 1rem;">
+                <input type="text" id="todo-input" placeholder="Add a new task..." aria-label="New task input" style="width: 70%; padding: 0.5rem;">
+                <button id="add-btn">Add Task</button>
+            </div>
+            <div id="todo-filters" style="margin-bottom: 1rem; display: flex; gap: 0.5rem;">
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <ul id="todo-list" style="list-style: none; padding: 0;"></ul>
+        </section>
 
-            <article>
-                <h3>Project 2: E-Commerce Web App</h3>
-                <p>An online shopping site developed using modern frontend technologies and clean structure.</p>
-            </article>
+        <hr>
+
+        <!-- Task 4: Weather Dashboard Section -->
+        <section id="weather-app" style="margin-top: 3rem;">
+            <h2>Real-Time Weather Dashboard</h2>
+            <div style="margin-bottom: 1rem;">
+                <input type="text" id="city-input" placeholder="Enter city name... (e.g., Chennai)" aria-label="City name input" style="width: 70%; padding: 0.5rem;">
+                <button id="weather-btn">Get Weather</button>
+            </div>
+            
+            <!-- Weather Display Area -->
+            <div id="weather-display" style="background: #f4f4f4; padding: 1rem; border-radius: 8px; display: none; color: #333;">
+                <h3 id="weather-city">City Name</h3>
+                <p>Temperature: <span id="weather-temp">--</span>°C</p>
+                <p>Humidity: <span id="weather-humidity">--</span>%</p>
+                <p>Wind Speed: <span id="weather-wind">--</span> m/s</p>
+            </div>
+            <p id="weather-error" style="color: red; display: none;"></p>
         </section>
     </main>
 
-    <!-- Semantic Footer Section -->
     <footer>
         <p>&copy; 2026 Developer Portfolio. All rights reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
